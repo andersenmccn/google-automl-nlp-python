@@ -12,20 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from google.cloud import automl
 
-def create_model(project_id, dataset_id, display_name):
+project_id = "cadillacvehiclerecognition-poc"
+dataset_id = "TEN183111566978187264"
+display_name = "nlp-model-1"
+
+def main():
     """Create a model."""
     # [START automl_language_entity_extraction_create_model]
-    from google.cloud import automl
-
-    project_id = "cadillacvehiclerecognition-poc"
-    dataset_id = "TEN183111566978187264"
-    display_name = "nlp-model-1"
 
     client = automl.AutoMlClient()
 
     # A resource that represents Google Cloud Platform location.
-    project_location = f"projects/{project_id}/locations/us-central1"
+    project_location = "projects/{project_id}/locations/us-central1"
     # Leave model unset to use the default base model provided by Google
     metadata = automl.TextExtractionModelMetadata()
     model = automl.Model(
@@ -44,4 +44,5 @@ def create_model(project_id, dataset_id, display_name):
 
 
 
-
+if __name__ == '__main__':
+    main()
