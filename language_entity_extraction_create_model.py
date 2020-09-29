@@ -18,10 +18,9 @@ def create_model(project_id, dataset_id, display_name):
     # [START automl_language_entity_extraction_create_model]
     from google.cloud import automl
 
-    # TODO(developer): Uncomment and set the following variables
-    # project_id = "YOUR_PROJECT_ID"
-    # dataset_id = "YOUR_DATASET_ID"
-    # display_name = "YOUR_MODEL_NAME"
+    project_id = "cadillacvehiclerecognition-poc"
+    dataset_id = "TEN183111566978187264"
+    display_name = "nlp-model-1"
 
     client = automl.AutoMlClient()
 
