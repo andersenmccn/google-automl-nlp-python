@@ -25,7 +25,8 @@ def main():
     client = automl.AutoMlClient()
 
     # A resource that represents Google Cloud Platform location.
-    project_location = "projects/{project_id}/locations/us-central1"
+    project_location = "projects/{}/locations/us-central1".format(project_id)
+    print(project_location)
     # Leave model unset to use the default base model provided by Google
     metadata = automl.TextExtractionModelMetadata()
     model = automl.Model(
