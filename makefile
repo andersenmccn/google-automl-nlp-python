@@ -1,6 +1,6 @@
-DOCKER_IMAGE = googlecloud-sdk:python
-AUTH_VOLUME = gcloud-config-python
-DOCKER_RUN_CMD = --rm --volumes-from ${AUTH_VOLUME} -w /app -v ${CURDIR}:/app
+DOCKER_IMAGE = my-googlecloud-sdk:python
+AUTH_VOLUME = my-gcloud-config
+DOCKER_RUN_CMD = --rm --volumes-from ${AUTH_VOLUME} -w /app -v ${CURDIR}:/app -v ${GOOGLE_APPLICATION_CREDENTIALS}:/key/credentials.json
 ENV_INIT_CMD = gcloud auth login
 
 dockerenv:
@@ -13,7 +13,7 @@ bash: dockerenv
 	docker run -ti ${DOCKER_RUN_CMD} ${DOCKER_IMAGE} /bin/bash
 
 create-model: dockerenv
-	docker run ${DOCKER_RUN_CMD} ${DOCKER_IMAGE} python3 src/language_entity_extraction_create_model_test.py
+	docker run ${DOCKER_RUN_CMD} ${DOCKER_IMAGE} python3 src/language_entity_extraction_create_model.py
 
 
 .PHONY: dockerenv bash dev

@@ -16,7 +16,7 @@ from google.cloud import automl
 
 project_id = "cadillacvehiclerecognition-poc"
 dataset_id = "TEN183111566978187264"
-display_name = "nlp-model-1"
+display_name = "nlp_model_1"
 
 def main():
     """Create a model."""
