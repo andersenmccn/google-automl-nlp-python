@@ -14,11 +14,8 @@
 
 from google.cloud import automl
 
-project_id = "cadillacvehiclerecognition-poc"
-dataset_id = "TEN183111566978187264"
-display_name = "nlp_model_1"
 
-def main():
+def create_model(project_id, dataset_id, display_name):
     """Create a model."""
     # [START automl_language_entity_extraction_create_model]
 
@@ -43,7 +40,5 @@ def main():
     # [END automl_language_entity_extraction_create_model]
 
 
-
-
 if __name__ == '__main__':
-    main()
+    main(project_id = "cadillacvehiclerecognition-poc", dataset_id = "TEN183111566978187264", display_name = "nlp_model_1")

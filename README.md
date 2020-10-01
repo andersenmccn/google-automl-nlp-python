@@ -28,9 +28,8 @@ In order to use this library, you first need to go through the following steps:
 Installation
 -----------
 1. Provide authentication credentials to your application code by setting the environment variable `GOOGLE_APPLICATION_CREDENTIALS`
-   - example: `export GOOGLE_APPLICATION_CREDENTIALS="[KEY PATH]"` 
 2. `make dockerenv`
-3. `make create-model` or `GOOGLE_APPLICATION_CREDENTIALS=$HOME/devkey/cadillacvehiclerecognition-poc-1f93eb0150ad.json make create-model`
+3. `GOOGLE_APPLICATION_CREDENTIALS=$HOME/devkey/xxx.json make create-model`
 
 
 Note
